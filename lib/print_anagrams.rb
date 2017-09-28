@@ -4,7 +4,6 @@ class PrintAnagrams
 
   def initialize(anagrams = Anagrams.new)
     @anagrams = anagrams
-    @anagram_string = ""
   end
 
   def print_all
@@ -14,10 +13,11 @@ class PrintAnagrams
   end
 
   def print_anagrams
+    string = ""
     @anagrams.return_anagrams.each do |combination|
-      @anagram_string << combination.join(" ") + "\n"
+      string << combination.join(" ") + "\n"
     end
-    print @anagram_string
+    print string
   end
 
   def print_most_words
